@@ -1,7 +1,6 @@
 package com.cleancode.knuth;
 
 class NumberPrinter {
-
     private final int linesPerPage;
     private final int columns;
 
