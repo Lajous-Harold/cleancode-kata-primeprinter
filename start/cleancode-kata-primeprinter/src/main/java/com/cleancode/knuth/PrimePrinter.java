@@ -7,8 +7,8 @@ public class PrimePrinter {
     private static final int columns = 4;
 
     public static void main(String[] args) {
-        PrimePrinterHelper helper = new PrimePrinterHelper();
-        int[] numbers = helper.generatePrimes(numberOfNumbers);
+        PrimeGenerator generator = new PrimeGenerator();
+        int[] numbers = generator.generatePrimes(numberOfNumbers);
 
         new NumberPrinter(linesPerPage, columns).print(numbers, numberOfNumbers);
     }

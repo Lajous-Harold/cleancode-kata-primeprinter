@@ -1,6 +1,6 @@
 package com.cleancode.knuth;
 
-public class PrimePrinterHelper {
+public class PrimeGenerator {
 
     private final int ordmax = 30;
     private int numbers[];
