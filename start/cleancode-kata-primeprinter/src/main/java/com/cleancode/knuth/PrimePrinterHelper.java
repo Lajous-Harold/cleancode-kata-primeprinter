@@ -48,6 +48,10 @@ public class PrimePrinterHelper {
             primeIndex++;
             primes[primeIndex]=candidate;
         }
+        printPrimes(primes, numberOfPrimes);
+    }
+
+    private void printPrimes(int[] primes, int numberOfPrimes){
         pagenumber = 1;
         pageoffset = 1;
         while (pageoffset <= numberOfPrimes) {
