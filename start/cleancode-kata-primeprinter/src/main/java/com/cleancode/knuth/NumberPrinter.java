@@ -1,12 +1,12 @@
 package com.cleancode.knuth;
 
 class NumberPrinter {
-    private final int linesPerPage;
-    private final int columns;
+    private final int LINES_PER_PAGE;
+    private final int COLUMNS;
 
     public NumberPrinter(int linesPerPage, int columns) {
-        this.linesPerPage = linesPerPage;
-        this.columns = columns;
+        this.LINES_PER_PAGE = linesPerPage;
+        this.COLUMNS = columns;
     }
 
     public void print(int[] numbers, int numberOfNumbers) {
@@ -18,15 +18,15 @@ class NumberPrinter {
             System.out.print(" Prime Numbers === Page ");
             System.out.print(Integer.toString(pagenumber));
             System.out.println("\n");
-            for (int rowoffset = pageoffset; rowoffset <= pageoffset + linesPerPage - 1; rowoffset++) {
-                for (int column = 0; column <= columns - 1; column++)
-                    if (rowoffset + column * linesPerPage <= numberOfNumbers)
-                        System.out.printf("%10d", numbers[rowoffset + column * linesPerPage]);
+            for (int rowoffset = pageoffset; rowoffset <= pageoffset + LINES_PER_PAGE - 1; rowoffset++) {
+                for (int column = 0; column <= COLUMNS - 1; column++)
+                    if (rowoffset + column * LINES_PER_PAGE <= numberOfNumbers)
+                        System.out.printf("%10d", numbers[rowoffset + column * LINES_PER_PAGE]);
                 System.out.println();
             }
             System.out.println("\f");
             pagenumber++;
-            pageoffset += linesPerPage * columns;
+            pageoffset += LINES_PER_PAGE * COLUMNS;
         }
     }
 }

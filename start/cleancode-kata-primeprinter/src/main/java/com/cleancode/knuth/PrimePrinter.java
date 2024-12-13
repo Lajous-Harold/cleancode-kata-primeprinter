@@ -2,14 +2,15 @@ package com.cleancode.knuth;
 
 public class PrimePrinter {
 
-    private static final int numberOfNumbers = 1000;
-    private static final int linesPerPage = 50;
-    private static final int columns = 4;
+    private static final int NUMBER_OF_NUMBERS = 1000;
+    private static final int LINES_PER_PAGE = 50;
+    private static final int COLUMNS = 4;
 
     public static void main(String[] args) {
         PrimeGenerator generator = new PrimeGenerator();
-        int[] numbers = generator.generatePrimes(numberOfNumbers);
+        int[] numbers = generator.generatePrimes(NUMBER_OF_NUMBERS);
 
-        new NumberPrinter(linesPerPage, columns).print(numbers, numberOfNumbers);
+        NumberPrinter printer = new NumberPrinter(LINES_PER_PAGE, COLUMNS);
+        printer.print(numbers, NUMBER_OF_NUMBERS);
     }
 }
