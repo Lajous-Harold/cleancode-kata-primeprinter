@@ -1,4 +1,6 @@
 import java.time.LocalDate;
+import java.util.Objects;
+import java.util.Optional;
 
 public class Exercise1 {
 
@@ -12,17 +14,11 @@ public class Exercise1 {
         this.inspectorId = inspectorId;
     }
 
-    public boolean isEdible()
-    {
-        if (this.expirationDate.isAfter(LocalDate.now()) &&
-                this.approvedForConsumption == true &&
-                this.inspectorId != null)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+    public boolean isEdible() {
+        return Optional.ofNullable(expirationDate)
+                .map(date -> date.isAfter(LocalDate.now()))
+                .orElse(false) &&
+               Boolean.TRUE.equals(approvedForConsumption) &&
+               Objects.nonNull(inspectorId);
     }
 }
